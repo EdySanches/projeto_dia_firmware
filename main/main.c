@@ -1,11 +1,4 @@
-/* Blink Example
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
+/* bibliotecas */
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -14,16 +7,20 @@
 #include "led_strip.h"
 #include "sdkconfig.h"
 
-static const char *TAG = "example";
+#include "wifi.h"
 
-/* Use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
-   or you can edit the following line and set a number here.
-*/
+/* defines */
 #define BLINK_GPIO GPIO_NUM_13
 #define GND_GPIO GPIO_NUM_4
+
+
+/* globais */
+static const char *TAG = "example";
+
 static uint8_t s_led_state = 0;
 
 
+/* funcoes auxiliares */
 static void blink_led(uint8_t s_led_state)
 {
     /* Set the GPIO level according to the state (LOW or HIGH)*/
@@ -48,8 +45,21 @@ static void configure_led(void)
 
 }
 
+
+/* aplicacao principal */
+/* TODO list
+ * - NVS
+ * - task de monitoramento
+ * - sensor
+ * - RTC
+ * - timers
+ * - headers http
+ * - task de envio
+ * */
 void app_main(void)
 {
+	/* inicializa e conecta no wifi */
+    wifi_init_sta();
 
     /* Configure the peripheral according to the LED type */
     configure_led();
@@ -61,4 +71,5 @@ void app_main(void)
         s_led_state = !s_led_state;
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
+
 }
