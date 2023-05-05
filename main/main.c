@@ -1,13 +1,6 @@
 /* bibliotecas */
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "driver/gpio.h"
-#include "esp_log.h"
-#include "led_strip.h"
-#include "sdkconfig.h"
-
-#include "wifi.h"
+#include "main.h"
+#include <nvs.h>
 
 /* defines */
 #define BLINK_GPIO GPIO_NUM_13
@@ -15,8 +8,6 @@
 
 
 /* globais */
-static const char *TAG = "example";
-
 static uint8_t s_led_state = 0;
 
 
@@ -33,7 +24,7 @@ static void blink_led(uint8_t s_led_state)
 
 static void configure_led(void)
 {
-    ESP_LOGI(TAG, "Example configured to blink GPIO LED!");
+    ESP_LOGI("configure_led", "Example configured to blink GPIO LED!");
     gpio_reset_pin(BLINK_GPIO);
     gpio_reset_pin(GND_GPIO);
 
@@ -58,6 +49,18 @@ static void configure_led(void)
  * */
 void app_main(void)
 {
+	static const char *TAG = "app_main";
+	ESP_LOGI(TAG, "Iniciando app_main...");
+
+	esp_err_t ret = nvs_flash_init();
+	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
+	{
+		ESP_ERROR_CHECK(nvs_flash_erase());
+		ret = nvs_flash_init();
+	}
+	ESP_ERROR_CHECK(ret);
+
+
 	/* inicializa e conecta no wifi */
     wifi_init_sta();
 
