@@ -3,7 +3,7 @@
 #include <nvs.h>
 
 /* defines */
-#define BLINK_GPIO GPIO_NUM_13
+#define BLINK_GPIO GPIO_NUM_2
 #define GND_GPIO GPIO_NUM_4
 
 
@@ -39,7 +39,6 @@ static void configure_led(void)
 
 /* aplicacao principal */
 /* TODO list
- * - NVS
  * - task de monitoramento
  * - sensor
  * - RTC
