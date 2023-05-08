@@ -5,7 +5,8 @@ SRCS
 "conn/src/wifi.c" 
 "storage/src/nvs_handler.c"
 "storage/src/spiffs_handler.c"
-                    
+"sensor/src/sensor_ch1.c"
+"sensor/src/setpoints.c"                    
 INCLUDE_DIRS 
 "."
 "core/inc" 

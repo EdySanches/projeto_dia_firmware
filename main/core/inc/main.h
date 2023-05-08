@@ -18,10 +18,10 @@
 
 #include <nvs.h>
 #include <nvs_flash.h>
+#include "../../sensor/inc/sensor_ch1.h"
 
 #include "wifi.h"
 #include "nvs_handler.h"
 #include "led.h"
-#include "sensor.h"
 
 #endif /* MAIN_MAIN_H_ */
