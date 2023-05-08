@@ -11,4 +11,4 @@ INCLUDE_DIRS
 "core/inc" 
 "conn/inc" 
 "storage/inc"
-"storage/inc")
+"sensor/inc")

@@ -22,5 +22,6 @@
 #include "wifi.h"
 #include "nvs_handler.h"
 #include "led.h"
+#include "sensor.h"
 
 #endif /* MAIN_MAIN_H_ */
