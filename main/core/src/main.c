@@ -14,6 +14,7 @@ static uint8_t s_led_state = 0;
  * - sensor
  * - RTC
  * - timers
+ * - aplicacao wifi
  * - headers http
  * - task de envio
  * */
@@ -35,7 +36,8 @@ void app_main(void)
     configure_led();
 
 	/* inicializa e conecta no wifi */
-    wifi_init_sta();
+	wifi_app_start();
+//    wifi_init_sta();
 
     /*  */
     while (1) {

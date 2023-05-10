@@ -2,7 +2,8 @@ idf_component_register(
 SRCS 
 "core/src/main.c"
 "core/src/led.c" 
-"conn/src/wifi.c" 
+"conn/src/wifi_conn.c"
+"conn/src/wifi_app.c"
 "storage/src/nvs_handler.c"
 "storage/src/spiffs_handler.c"
 "sensor/src/sensor_ch1.c"
