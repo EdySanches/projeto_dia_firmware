@@ -4,6 +4,7 @@ SRCS
 "core/src/led.c" 
 "conn/src/wifi_conn.c"
 "conn/src/wifi_app.c"
+"conn/src/http_server.c"
 "storage/src/nvs_handler.c"
 "storage/src/spiffs_handler.c"
 "sensor/src/sensor_ch1.c"
@@ -13,4 +14,11 @@ INCLUDE_DIRS
 "core/inc" 
 "conn/inc" 
 "storage/inc"
-"sensor/inc")
+"sensor/inc"
+EMBED_FILES
+webpage/app.css 
+webpage/app.js 
+webpage/favicon.ico 
+webpage/index.html
+webpage/jquery-3.3.1.min.js
+)

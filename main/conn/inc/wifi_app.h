@@ -12,6 +12,9 @@
 #include "esp_wifi_types.h"
 #include "freertos/FreeRTOS.h"
 
+#include "http_server.h"
+
+
 // Callback typedef
 typedef void (*wifi_connected_event_callback_t)(void);
 
