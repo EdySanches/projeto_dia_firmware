@@ -11,9 +11,16 @@
 #include "esp_netif.h"
 #include "esp_wifi_types.h"
 #include "freertos/FreeRTOS.h"
+#include "freertos/event_groups.h"
+#include "freertos/task.h"
+#include "esp_err.h"
+#include "esp_log.h"
+#include "esp_wifi.h"
+#include "lwip/netdb.h"
 
+#include "tasks_common.h"
 #include "http_server.h"
-
+#include "wifi_app.h"
 
 // Callback typedef
 typedef void (*wifi_connected_event_callback_t)(void);

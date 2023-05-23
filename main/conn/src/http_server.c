@@ -5,15 +5,7 @@
  *      Author: kjagu
  */
 
-#include "esp_http_server.h"
-#include "esp_log.h"
-#include "esp_ota_ops.h"
-#include "esp_timer.h"
-#include "sys/param.h"
-
 #include "http_server.h"
-#include "tasks_common.h"
-#include "wifi_app.h"
 
 // Tag used for ESP serial console messages
 static const char TAG[] = "http_server";

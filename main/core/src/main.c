@@ -1,9 +1,6 @@
 /* bibliotecas */
 #include "main.h"
 
-/* defines */
-
-
 /* globais */
 static uint8_t s_led_state = 0;
 
@@ -35,9 +32,8 @@ void app_main(void)
 	/* configuracoes gerais */
     configure_led();
 
-	/* inicializa e conecta no wifi */
+	/* inicializa wifi_app e http_server */
 	wifi_app_start();
-//    wifi_init_sta();
 
     /*  */
     while (1) {

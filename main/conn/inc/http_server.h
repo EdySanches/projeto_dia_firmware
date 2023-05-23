@@ -8,6 +8,17 @@
 #ifndef MAIN_HTTP_SERVER_H_
 #define MAIN_HTTP_SERVER_H_
 
+#include "esp_http_server.h"
+#include "esp_log.h"
+#include "esp_ota_ops.h"
+#include "esp_timer.h"
+#include "sys/param.h"
+
+#include "http_server.h"
+#include "tasks_common.h"
+#include "wifi_app.h"
+
+
 #define OTA_UPDATE_PENDING 		0
 #define OTA_UPDATE_SUCCESSFUL	1
 #define OTA_UPDATE_FAILED		-1

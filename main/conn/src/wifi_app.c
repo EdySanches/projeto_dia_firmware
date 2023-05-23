@@ -5,17 +5,6 @@
  *      Author: kjagu
  */
 
-#include "freertos/FreeRTOS.h"
-#include "freertos/event_groups.h"
-#include "freertos/task.h"
-
-#include "esp_err.h"
-#include "esp_log.h"
-#include "esp_wifi.h"
-#include "lwip/netdb.h"
-
-//#include "rgb_led.h"
-#include "tasks_common.h"
 #include "wifi_app.h"
 
 // Tag used for ESP serial console messages
